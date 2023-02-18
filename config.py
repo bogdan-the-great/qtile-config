@@ -107,10 +107,19 @@ colors = [
 ]
 
 ## Groups - Workspaces, tags or desktops (call them what you want),
-# also open discord only on the second group 
+# also open discord and spotify only on the second group. 
+# I added layouts to second group to change order in which they are there
 groups = [
     Group("1", label=" "),
-    Group("2", label=" "),
+    Group("2", label=" ",
+     layouts=[layout.Columns(
+        border_focus=colors[6],
+        border_normal=colors[1],
+        border_on_single=False,
+        fair=True,
+     ), layout.Max()],
+     matches=[Match(wm_class="discord-canary"),
+              Match(wm_class="Spotify")]),
     Group("3", label=" "),
     Group("4", label=" "),
     Group("5", label=" "),
@@ -118,6 +127,7 @@ groups = [
 
 # Magic behind groups
 for i in groups:
+
     keys.extend([
             # mod1 + letter of group = switch to group
             Key([mod], i.name, lazy.group[i.name].toscreen()),
@@ -141,24 +151,25 @@ layouts = [
                 border_focus=colors[6],
                 border_normal=colors[1],
             ),
-            layout.TreeTab(
-                font="Ubuntu",
-                fontsize=10,
-                border_width=2,
-                bg_color=colors[0],
-                active_bg=colors[9],
-                active_fg=colors[12],
-                inactive_bg=colors[1],
-                inactive_fg=colors[12],
-                padding_left=0,
-                panel_width=175,
-                vspace=2,
-            ),
-            layout.RatioTile(
-                border_focus=colors[6],
-                border_normal=colors[1],
-            ),
+            # layout.TreeTab(
+            #    font="Ubuntu",
+            #    fontsize=10,
+            #    border_width=2,
+            #    bg_color=colors[0],
+            #    active_bg=colors[9],
+            #    active_fg=colors[12],
+            #    inactive_bg=colors[1],
+            #    inactive_fg=colors[12],
+            #    padding_left=0,
+            #    panel_width=175,
+            #    vspace=2,
+            #),
+            #layout.RatioTile(
+            #    border_focus=colors[6],
+            #    border_normal=colors[1],
+            #),
 ]
+
 
 ## Screens - Two different bars for two monitors (screen = monitor),
 # get multihead (multimonitor) support working yourself, I configured Xrandr with Arandr
@@ -248,6 +259,16 @@ screens = [
                 padding=-6,
                 fontsize=37,
             ),
+            widget.LaunchBar(
+                progs=[
+                    ("♫", "", ""),
+                    ("⮜", "playerctl previous", "previous song"),
+                    ("", "playerctl play-pause", "previous song"),
+                    ("⮞", "playerctl next", "next song"),
+                ],
+                background=colors[10],
+                padding = 1,
+            ),
             widget.Mpris2(
                 foreground=colors[2],
                 background=colors[10],
@@ -255,8 +276,8 @@ screens = [
                 name="spotify",
                 display_metadata=["xesam:title", "xesam:artist"],
                 objname="org.mpris.MediaPlayer2.spotify",
-                #playing_text = "契 {track}",
-                paused_text  = " {track}",
+                playing_text = "{track}",
+                paused_text  = "{track}",
                 width=150,
                 mouse_callbacks={'Button3': lazy.spawn("spotify")},
             ),

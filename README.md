@@ -17,6 +17,7 @@ Full view:
 
 ## Installation
 ### Dependencies
+If some widgets don't work, that means they need dependecies! Consult [qtile docs](https://docs.qtile.org/en/latest/manual/ref/widgets.html#) to check their dependencies.
 - [Qtile (obviously)](http://www.qtile.org/)
 - [Terminal emulator of choice](https://wikiless.tiekoetter.com/wiki/List_of_terminal_emulators?lang=en)
 - [Gsimplecal (calendar)](https://github.com/dmedvinsky/gsimplecal)
