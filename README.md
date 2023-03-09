@@ -6,7 +6,7 @@
 ![config2](assets/screenshots/powerline.png)
 
 ## Note:
-INCLUDING QTILE EXTRAS - please set it up before using this config. Should configure properly, and according to the documentation before using, this isn't out-of-the-box config, but most of it is already pre-configured.
+INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/) - please set it up before using this config. Should configure properly, and according to the documentation before using, this isn't out-of-the-box config, but most of it is already pre-configured.
 
 ## Features:
 Everything in one config.py file, assets provided for images. Images are "connected" to widgets using same color decorations. Default layouts: Max, Columns, and Floating. Mpris scrolling, mouse callbacks on: Tags, Tasklist, Mpris (stops music), Volume (mutes), Clock (runs Gsimplecal if installed), CurrentLayout (changes layouts), reboot and shutdown buttons. 
