@@ -20,4 +20,3 @@ discord-canary &
 spotify &
 tutanota-desktop &
 flameshot &
-volctl &
