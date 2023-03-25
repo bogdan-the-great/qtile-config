@@ -4,14 +4,18 @@
 ![tokyonight](assets/screenshots/tokyonight.png)
 ### Catppuccin Mocha:
 ![config1](assets/screenshots/columns.png)
-### [Previous powerline config:](https://github.com/piotr-marendowski/arch-dotfiles/tree/main/Qtile-Powerline)
-![config2](assets/screenshots/powerline.png)
 
 ## Note:
-INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/) - please set it up before using this config. Should configure properly, and according to the documentation before using, this isn't out-of-the-box config, but most of it is already pre-configured.
+INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/)
 
-## Features:
-Everything in one config.py file, assets provided for images. Images are "connected" to widgets using the same color decorations. Volume icon changing with volume levels. Default layouts: Max, Columns, and Floating. Mpris scrolling, mouse callbacks on: Tags, Tasklist, Mpris (stops music), Volume (mutes), Clock (runs Gsimplecal if installed), CurrentLayout (changes layouts), reboot and shutdown buttons. 
+### [Picom](https://github.com/yshui/picom)
+For Picom I use this fork [link](https://github.com/jonaburg/picom), config is from there.
+
+### [Alacritty](https://alacritty.org/)
+For Alacritty I use the default config with [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) and [Tokyo Night](https://github.com/alacritty/alacritty-theme/blob/master/themes/tokyo-night-storm.yaml) theme.
+
+### [Dunst](https://github.com/dunst-project/dunst)
+For Dunst I use the default configuration with colors change to resemble the Tokyo Night theme.
 
 ## Troubleshooting:
 If Mpris2 doesn't work [check this](https://github.com/elParaguayo/qtile-extras/issues/224).
