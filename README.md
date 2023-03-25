@@ -20,6 +20,9 @@ For Dunst I use the default configuration with colors change to resemble the Tok
 ### .screenlayout
 For dualmonitor support.
 
+### [Lvim](https://www.lunarvim.org/)
+LunarVim is IDE-like Neovim config which I modified a little.
+
 ## Troubleshooting:
 If Mpris2 doesn't work [check this](https://github.com/elParaguayo/qtile-extras/issues/224).
 
