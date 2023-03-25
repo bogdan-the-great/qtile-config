@@ -81,7 +81,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]
 
-# USING COLORS FROM TOKYO NIGHT
+# USING COLORS FROM TOKYO NIGHT, left are from Catppuccin
 colors = {
     "white": "#b7c0ea", # white-ish
     "grey": "#949cbe", # grey-ish
