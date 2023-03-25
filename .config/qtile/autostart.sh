@@ -15,7 +15,7 @@ nitrogen --restore &
 redshift -P -O 3500 &
 picom --backend glx &
 firefox &
-vscodium &
+alacritty -e lvim &
 discord-canary &
 spotify &
 tutanota-desktop &

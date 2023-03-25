@@ -17,6 +17,9 @@ For Alacritty I use the default config with [Nerd Fonts](https://github.com/ryan
 ### [Dunst](https://github.com/dunst-project/dunst)
 For Dunst I use the default configuration with colors change to resemble the Tokyo Night theme.
 
+### .screenlayout
+For dualmonitor support.
+
 ## Troubleshooting:
 If Mpris2 doesn't work [check this](https://github.com/elParaguayo/qtile-extras/issues/224).
 
