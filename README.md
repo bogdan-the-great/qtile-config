@@ -4,7 +4,7 @@
 ![tokyonight](assets/screenshots/tokyonight.png)
 ### Catppuccin Mocha:
 ![config1](assets/screenshots/columns.png)
-### [Previous powerline config:](https://github.com/piotr-marendowski/arch-dotfiles/tree/main/Qtile%20powerline)
+### [Previous powerline config:](https://github.com/piotr-marendowski/arch-dotfiles/tree/main/Qtile-Powerline)
 ![config2](assets/screenshots/powerline.png)
 
 ## Note:
