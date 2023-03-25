@@ -82,7 +82,6 @@ keys = [
 ]
 
 # USING COLORS FROM TOKYO NIGHT
-# abnormal names left from catppuccin just in case
 colors = {
     "white": "#b7c0ea", # white-ish
     "grey": "#949cbe", # grey-ish
@@ -242,6 +241,7 @@ screens = [
                 filename = '~/.config/qtile/assets/music.png',
                 margin = 7,
                 #padding = 6,
+                mouse_callbacks = {'Button3': lazy.spawn("spotify")},
                 decorations = [
                     RectDecoration(
                         colour = colors["mint"],
@@ -277,6 +277,7 @@ screens = [
                 filename = '~/.config/qtile/assets/update.png',
                 margin = 7,
                 #padding = 6,
+                mouse_callbacks = {'Button1': lazy.spawn("alacritty -e sudo pacman -Syu")},
                 decorations = [
                     RectDecoration(
                         colour = colors["green"],
@@ -336,6 +337,7 @@ screens = [
             widget.Image(
                 filename = '~/.config/qtile/assets/clock.png',
                 margin = 7,
+                mouse_callbacks = {'Button1': lazy.spawn("gsimplecal")},
                 decorations = [
                     RectDecoration(
                         colour = colors["orange"],
@@ -410,65 +412,6 @@ screens = [
             margin = 4,
         ),
     ),
-    #Screen(
-    #    top=bar.Bar([
-    #        widget.CurrentLayoutIcon(
-    #            custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-    #            foreground=colors[0],
-    #            background=colors[0],
-    #            padding=0,
-    #            scale=0.6,
-    #        ),
-    #        widget.GroupBox(
-    #            font="Ubuntu Bold",
-    #            fontsize=12,
-    #            margin_y=2,
-    #            margin_x=0,
-    #            padding_y=5,
-    #            padding_x=3,
-    #            borderwidth=3,
-    #            active=colors[2],
-    #            inactive=colors[1],
-    #            rounded=False,
-    #            # highlight_color=self.colors[9],
-    #            # highlight_method="line",
-    #            highlight_method='block',
-    #            urgent_alert_method='block',
-    #            # urgent_border=self.colors[9],
-    #            this_current_screen_border=colors[9],
-    #            this_screen_border=colors[4],
-    #            other_current_screen_border=colors[0],
-    #            other_screen_border=colors[0],
-    #            foreground=colors[2],
-    #            background=colors[0],
-    #            disable_drag=True,
-    #        ),
-    #        widget.Sep(
-    #            linewidth=0,
-    #            padding=10,
-    #            foreground=colors[2],
-    #            background=colors[0],
-    #        ),
-    #        widget.TaskList(
-    #            theme_path="/usr/share/icons/Papirus/index.theme",
-    #            theme_mode="preferred",
-    #            highlight_method = 'block',
-    #            icon_size=14,
-    #            max_title_width=100,
-    #            rounded=False,
-    #            margin=0,
-    #            padding=3,
-    #            fontsize=10,
-    #            border=colors[9],
-    #            foreground=colors[2],
-    #            borderwidth = 0,
-    #            background=colors[0],
-    #            urgent_border=colors[2],
-    #            txt_floating='🗗 ',
-    #            txt_minimized='_ ',
-    #        ),
-    #    ], 20, opacity=1),
-    #),
 ]
 
 # Mouse
