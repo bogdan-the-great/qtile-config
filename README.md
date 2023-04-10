@@ -1,5 +1,7 @@
 ## My main [Qtile](http://www.qtile.org/) config
 
+### Transparent:
+![transparent](assets/screenshots/transparent.png)
 ### Tokyo Night:
 ![tokyonight](assets/screenshots/tokyonight.png)
 ### Catppuccin Mocha:
