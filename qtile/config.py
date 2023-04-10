@@ -54,10 +54,9 @@ keys = [
     ## CUSTOM
     # Spawn apps
     Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "e", lazy.spawn("pcmanfm")),
+    Key([mod], "e", lazy.spawn("Thunar")),
     # Run "rofi-theme-selector" in terminal to select a theme
     Key([mod], "s", lazy.spawn("rofi -show drun")),
-    Key([mod], "c", lazy.spawn("vscodium")),
     Key([mod], "f", lazy.spawn("firefox")),
     Key([mod], "g", lazy.spawn("pavucontrol")),
 
@@ -65,9 +64,9 @@ keys = [
     Key([], "Print", lazy.spawn("flameshot gui")),
     
     # Use volume, audio and brigthness controls on your keyboard
-    # Volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
+    # Volume 
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")),
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
 
     # Audio controls
@@ -76,38 +75,38 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     #([], "XF86AudioPause", lazy.spawn("playerctl play-pause")),    # just in case
      
-    # Brightness doesn't working for me (probably working only for laptop users)
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    # Brightness doesn't work for me (probably working only for laptop users)
+    # Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    # Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]
 
 # USING COLORS FROM TOKYO NIGHT, left are from Catppuccin
 colors = {
-    "white": "#b7c0ea", # white-ish
-    "grey": "#949cbe", # grey-ish
-    "pink": "#c099ff", # pink
+    "white": "#b7c0ea",         # white-ish
+    "grey": "#949cbe",          # grey-ish
+    "pink": "#c099ff",          # pink
     "mauve": "#CBA6F7",
-    "mint": "#70d4c5", # mint
-    "red": "#cf494a", # red
+    "mint": "#70d4c5",          # mint
+    "red": "#cf494a",           # red
     "maroon": "#EBA0AC",
-    "orange": "#f49862", # orange
-    "yellow": "#d9aa66", # yellow
-    "green": "#9ac969", # green
-    "cyan": "#73daca", # cyan
+    "orange": "#f49862",        # orange
+    "yellow": "#d9aa66",        # yellow
+    "green": "#9ac969",         # green
+    "cyan": "#73daca",          # cyan
     "teal": "#94E2D5",
     "sky": "#89DCEB",
     "sapphire": "#74C7EC",
-    "blue": "#759bed", # blue
+    "blue": "#759bed",          # blue
     "darkblue": "#545AA7",
-    "purple": "#9577ce", # purple
-    "text": "#CDD6F4", # black-ish
+    "purple": "#9577ce",        # purple
+    "text": "#CDD6F4",          # black-ish
     "subtext1": "#BAC2DE",
     "subtext0": "#A6ADC8",
     "overlay2": "#9399b2",
     "overlay1": "#7F849C",
     "surface2": "#585B70",
-    "systray": "#5d627d", # systray
-    "background": "#24283b", # background
+    "systray": "#5d627d",       # systray
+    "background": "#24283b",    # background
     "base": "#1E1E2E",
     "mantle": "#181825",
     "background_darker": "#1f2335", # background darker
@@ -135,61 +134,71 @@ groups = [
 
 # Magic behind groups
 for i in groups:
-
     keys.extend([
-            # mod1 + letter of group = switch to group
-            Key([mod], i.name, lazy.group[i.name].toscreen()),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True))
+        # mod1 + letter of group = switch to group
+        Key([mod], i.name, lazy.group[i.name].toscreen()),
+        # mod1 + shift + letter of group = switch to & move focused window to group
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True))
         ]
     )
 
 ## Layouts - Max as main, floating as layout not floating rules to windows
 layouts = [
-            layout.Max(),
-            layout.Columns(
-                border_focus = colors["red"],
-                border_normal = colors["base"],
-                border_on_single =False,
-                fair = True,
-                margin = 3,     # GAPS
-            ),
-            # In order to change aspects of floating windows in other layouts,
-            # see floating_layout at the Advanced section at the bottom
-            layout.floating.Floating(
-                border_focus = colors["red"],
-                border_normal = colors["base"],
-            ),
+    layout.Max(),
+    layout.Columns(
+        border_focus = colors["red"],
+        border_normal = colors["base"],
+        border_on_single =False,
+        fair = True,
+        margin = 3,     # GAPS
+    ),
+    # In order to change aspects of floating windows in other layouts,
+    # see floating_layout at the Advanced section at the bottom
+    layout.floating.Floating(
+        border_focus = colors["red"],
+        border_normal = colors["base"],
+    ),
 ]
 
 
 ## Screens - Two different bars for two monitors (screen = monitor),
-# get multihead (multimonitor) support working yourself, I configured Xrandr with Arandr
+# get multihead (multimonitor) support working yourself (autostart.sh)
 
-# default for widget
+# default for widgets
 widget_defaults = dict(
     font = "JetBrainsMono Nerd Font Mono Medium",
     fontsize = 14,
     padding = 0,
     margin = 0,
-    background = colors["background"],
+    # background = colors["background"],
+    background = colors["transparent"],
     foreground = colors["background"],
 )
 
+# default decorations
+decoration_defaults = dict(
+    # colour = colors["white"],
+    radius = 2,
+    filled = True,
+    group = True,
+    padding = 4,
+)
+
+# bar settings
 screens = [
     Screen(
-        top=bar.Bar([
+        top = bar.Bar([
             widget.Systray(
-                background = colors["systray"],
+                # background = colors["systray"],
                 icon_size = 20,
                 padding = 2,
             ),
-            widget.Sep(
-                linewidth = 4,
-                background = colors["systray"],
-                foreground = colors["systray"],
-            ),
-            widget.Spacer(length = 10),
+            #widget.Sep(
+            #   linewidth = 4,
+            #   background = colors["systray"],
+            #   foreground = colors["systray"],
+            #),
+            widget.Spacer(length = 5),
             widget.GroupBox(
                 hide_unused = True,
                 disable_drag = True,
@@ -212,43 +221,48 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["white"],
-                        radius = 2,
-                        filled = True,
-                        padding = 4,
-                        # group=True
+                        **decoration_defaults,
                     )
                 ],
             ),  
-            widget.Spacer(length = 10),
+            widget.CurrentLayoutIcon(
+                scale = 0.6,
+                custom_icon_paths = [
+                    os.path.expanduser("~/.config/qtile/assets/layout/"),
+                ],
+                decorations = [
+                    RectDecoration(
+                        colour = colors["white"],
+                        **decoration_defaults,
+                    )
+                ],
+            ),
             widget.TaskList(
                 theme_path = "/usr/share/icons/Papirus/index.theme",
                 theme_mode = "preferred",
                 highlight_method = 'block',
                 icon_size = 18,
                 max_title_width = 150,
-                margin = 1.9,           # match to center
-                padding = 6.5,          # size of a block
+                margin = 1.9,                   # match to center
+                padding = 6.5,                  # size of a block
                 fontsize = 13,
-                border = colors["base"],
-                foreground = "#ffffff",
-                borderwidth = 3,        # icon position
+                font = "JetBrainsMono",
+                border = colors["background"],  # fill current window
+                foreground = "#ffffff",         # text colors
+                borderwidth = 3,                # icon position
                 urgent_border = colors["red"],
-                txt_floating = '🗗 ',
+                txt_floating = ' ',
                 txt_minimized = '_ ',
             ),
             # RIGHT SIDE
             widget.Image(
                 filename = '~/.config/qtile/assets/music.png',
                 margin = 7,
-                #padding = 6,
                 mouse_callbacks = {'Button3': lazy.spawn("spotify")},
                 decorations = [
                     RectDecoration(
                         colour = colors["mint"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
@@ -265,26 +279,18 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["mint"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
-            widget.Spacer(length = 10),
             widget.Image(
                 filename = '~/.config/qtile/assets/update.png',
                 margin = 7,
-                #padding = 6,
                 mouse_callbacks = {'Button1': lazy.spawn("alacritty -e sudo pacman -Syu")},
                 decorations = [
                     RectDecoration(
                         colour = colors["green"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
@@ -298,42 +304,32 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["green"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
-            widget.Spacer(length = 10),
             widget.Volume(
                 theme_path = '~/.config/qtile/assets/volume/',
                 scroll_interval = 1.5,
                 margin = 3,
-                #padding = 6,
+                mouse_callbacks = {'Button3': lazy.spawn("pavucontrol")},
                 decorations = [
                     RectDecoration(
                         colour = colors["red"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
             widget.PulseVolume(
                 padding = 10,
+                mouse_callbacks = {'Button3': lazy.spawn("pavucontrol")},
                 decorations = [
                     RectDecoration(
                         colour = colors["red"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
-            widget.Spacer(length = 10),
             widget.Image(
                 filename = '~/.config/qtile/assets/clock.png',
                 margin = 7,
@@ -341,10 +337,7 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["orange"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
@@ -355,27 +348,7 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["orange"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
-                    )
-                ],
-            ),
-            widget.Spacer(length = 10),
-            widget.CurrentLayoutIcon(
-                padding = 0,
-                scale = 0.6,
-                custom_icon_paths = [
-                    os.path.expanduser("~/.config/qtile/assets/layout/"),
-                ],
-                decorations = [
-                    RectDecoration(
-                        colour = colors["white"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
@@ -386,10 +359,7 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["white"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
@@ -400,16 +370,15 @@ screens = [
                 decorations = [
                     RectDecoration(
                         colour = colors["white"],
-                        radius = 2,
-                        filled = True,
-                        group = True,
-                        padding = 4,
+                        **decoration_defaults,
                     )
                 ],
             ),
             ],
             35, # WIDTH
-            margin = 4,
+            # margin = 4,
+            margin = 2,
+            background = colors["transparent"],
         ),
     ),
 ]
@@ -465,3 +434,6 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
 wl_input_rules = None
+
+# for volume icon to appear
+lazy.reload_config()

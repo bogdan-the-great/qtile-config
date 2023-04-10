@@ -1,6 +1,6 @@
 ## My main [Qtile](http://www.qtile.org/) config
 
-### Transparent:
+### Transparent bar, Tokyo Night colors:
 ![transparent](assets/screenshots/transparent.png)
 ### Tokyo Night:
 ![tokyonight](assets/screenshots/tokyonight.png)
