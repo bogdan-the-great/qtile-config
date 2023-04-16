@@ -7,10 +7,8 @@
 ### Catppuccin Mocha:
 ![config1](assets/screenshots/columns.png)
 
-For specific configs see previous commits to copy-paste them.
-
 ## Note:
-INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/). The height of the elements in the bar correspond strictly with the font - ![JetBrains Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md)!
+INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/). The height of the elements in the bar corresponds strictly with the font size! Font - [JetBrains Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md). For specific configs see previous commits to copy-paste them.
 
 ### [Picom](https://github.com/yshui/picom)
 For Picom I use this fork [link](https://github.com/jonaburg/picom), config is from there.
