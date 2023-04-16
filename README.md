@@ -19,9 +19,6 @@ For Alacritty I use the default config with [Nerd Fonts](https://github.com/ryan
 ### [Dunst](https://github.com/dunst-project/dunst)
 For Dunst I use the default configuration with colors change to resemble the Tokyo Night theme.
 
-### .screenlayout
-For dualmonitor support.
-
 ### [Lvim](https://www.lunarvim.org/)
 LunarVim is IDE-like Neovim config which I modified a little.
 
