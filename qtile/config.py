@@ -283,6 +283,15 @@ screens = [
                     )
                 ],
             ),
+            widget.Spacer(
+                length = 5,
+                decorations = [
+                    RectDecoration(
+                        colour = colors["mint"],
+                        **decoration_defaults,
+                    )
+                ],
+            ),
             widget.Image(
                 filename = '~/.config/qtile/assets/update.png',
                 margin = 7,
