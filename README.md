@@ -10,18 +10,6 @@
 ## Note:
 INCLUDING [QTILE EXTRAS](https://qtile-extras.readthedocs.io/en/latest/). The height of the elements in the bar corresponds strictly with the font size! Font - [JetBrains Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md). For specific configs see previous commits to copy-paste them.
 
-### [Picom](https://github.com/yshui/picom)
-For Picom I use this fork [link](https://github.com/jonaburg/picom), config is from there.
-
-### [Alacritty](https://alacritty.org/)
-For Alacritty I use the default config with [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) and [Tokyo Night](https://github.com/alacritty/alacritty-theme/blob/master/themes/tokyo-night-storm.yaml) theme.
-
-### [Dunst](https://github.com/dunst-project/dunst)
-For Dunst I use the default configuration with colors change to resemble the Tokyo Night theme.
-
-### [Lvim](https://www.lunarvim.org/)
-LunarVim is IDE-like Neovim config which I modified a little.
-
 ## Troubleshooting:
 If Mpris2 doesn't work [check this](https://github.com/elParaguayo/qtile-extras/issues/224).
 
